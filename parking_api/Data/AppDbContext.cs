@@ -4,7 +4,7 @@ using parking_api.Models.EFModels;
 
 namespace parking_api.Data;
 
-public class AppDbContext : IdentityDbContext<User>
+public class AppDbContext : IdentityDbContext<User, Role, string>
 {
     public AppDbContext(DbContextOptions<AppDbContext> options)
         : base(options)

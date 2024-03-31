@@ -4,12 +4,14 @@ namespace parking_api.Models.EFModels;
 
 public class User : IdentityUser
 {
+    public string FirstName { get; set; } = null!;
+    public string LastName { get; set; } = null!;
     public string? PhoneSecondary { get; set; }
     public DateTime CreatedAt { get; set; } = DateTime.Now;
     public DateTime? UpdatedAt { get; set; }
     public bool IsDeleted { get; set; } = false;
     public bool IsActive { get; set; } = false;
-    public int CreatedByUserId { get; set; } = 1;
+    public int? CreatedByUserId { get; set; }
     public string? Otp { get; set; }
     public DateTime? OtpExpireAt { get; set; }
     public ICollection<Car>? Cars { get; set; }
